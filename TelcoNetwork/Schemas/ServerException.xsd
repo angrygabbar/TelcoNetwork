@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ServerException" xmlns:tns="http://www.example.org/ServerException" elementFormDefault="qualified">
+
+    <complexType name="ServerError">
+    	<sequence>
+    		<element name="Message" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ServerException" type="tns:ServerError"></element>
+</schema>

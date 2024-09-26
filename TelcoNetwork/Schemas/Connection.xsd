@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Connection" xmlns:tns="http://www.example.org/Connection" elementFormDefault="qualified">
+
+    <complexType name="ConnectionSingle">
+    	<sequence>
+    		<element name="CustomerID" type="string"></element>
+    		<element name="CustomerName" type="string"></element>
+    		<element name="UniqueID" type="string"></element>
+    		<element name="ConnectionNumber" type="int"></element>
+    		<element name="ConnectionType" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Conn">
+    	<sequence>
+    		<element name="ConnectionDetails" type="tns:ConnectionSingle" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Connection" type="tns:Conn"></element>
+</schema>
