@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpws:process exitOnStandardFault="no" name="telconetwork.Deactivate"
+<bpws:process exitOnStandardFault="no" name="telconetwork.SoapInvoke"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20240924103554"
+    targetNamespace="http://xmlns.example.com/20240927151721"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
-    xmlns:ns0="http://www.tibco.com/namespaces/tnt/plugins/httpreceiver+1a3cd36a-2d23-4ee2-8f0c-298c7a14747a+ActivityOutputType"
-    xmlns:ns1="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f51b02f9-6bc4-4160-8b2d-762d459e61a5+input"
-    xmlns:ns10="http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions"
-    xmlns:ns11="http://www.example.org/ServerException"
-    xmlns:ns12="http://www.tibco.com/pe/WriteToLogActivitySchema"
-    xmlns:ns2="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f51b02f9-6bc4-4160-8b2d-762d459e61a5+output"
-    xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery"
-    xmlns:ns4="http://www.tibco.com/namespaces/tnt/plugins/jdbc+76d7b67f-3d32-41b5-a880-825e9fa01b37+input"
-    xmlns:ns5="http://www.tibco.com/namespaces/tnt/plugins/jdbc"
-    xmlns:ns6="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.update"
-    xmlns:ns7="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+dbe39880-189b-4138-99f3-f1be4c8160d9+ResponseActivityInput"
-    xmlns:ns8="http://tns.tibco.com/bw/palette/internal/activityerror+bw.http.sendHTTPResponse"
-    xmlns:ns9="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+72e7f95f-d27d-463d-bc17-3986daa45310+ResponseActivityInput"
+    xmlns:ns0="http://xmlns.example.com/20240927151721PLT"
+    xmlns:ns1="http://www.tibco.com/AddConnectinonSoap/"
+    xmlns:ns10="http://tns.tibco.com/bw/palette/internal/activityerror+bw.http.sendHTTPResponse"
+    xmlns:ns11="http://www.tibco.com/namespaces/tnt/plugins/jdbc+ce2bc6ab-7588-47e0-9dff-6e4602b55ac8+input"
+    xmlns:ns12="http://www.tibco.com/namespaces/tnt/plugins/jdbc+ce2bc6ab-7588-47e0-9dff-6e4602b55ac8+output"
+    xmlns:ns13="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+87c8c05e-deb7-4af4-8480-873af482f4b1+ResponseActivityInput"
+    xmlns:ns14="http://www.example.org/Connection"
+    xmlns:ns15="http://www.tibco.com/namespaces/tnt/plugins/renderxml"
+    xmlns:ns16="http://tns.tibco.com/bw/palette/internal/activityerror+bw.xml.renderxml"
+    xmlns:ns17="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+ac37e347-69a1-43b9-8788-e3d6753ecc79+ResponseActivityInput"
+    xmlns:ns2="http://tns.tibco.com/bw/palette/internal/activityerror+e2e4958b-e9e2-4cb1-84d2-9c05904c8788"
+    xmlns:ns3="http://www.tibco.com/namespaces/tnt/plugins/httpreceiver+a6e35c1e-1657-48b0-887f-c2bf612a92e3+ActivityOutputType"
+    xmlns:ns4="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6df577e5-9c3b-46fc-a758-67d1a8f90d10+input"
+    xmlns:ns5="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6df577e5-9c3b-46fc-a758-67d1a8f90d10+output"
+    xmlns:ns6="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery"
+    xmlns:ns7="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f2bc1be0-03c6-4584-9cce-e5fcf6d543f9+input"
+    xmlns:ns8="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f2bc1be0-03c6-4584-9cce-e5fcf6d543f9+output"
+    xmlns:ns9="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+a0815b7d-9f0c-4b57-a01d-ee501f9a3245+ResponseActivityInput"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -238,10 +243,10 @@
             <element name="X509Certificate" type="tns:X509CertificateType"/>
         </schema>
         <schema elementFormDefault="unqualified"
-            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/httpreceiver+1a3cd36a-2d23-4ee2-8f0c-298c7a14747a+ActivityOutputType"
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/httpreceiver+a6e35c1e-1657-48b0-887f-c2bf612a92e3+ActivityOutputType"
             xmlns="http://www.w3.org/2001/XMLSchema"
             xmlns:ns0="http://xmlns.tibco.com/encodings/mime"
-            xmlns:ns1="http://xmlns.tibco.com/bw/security/tokens" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/httpreceiver+1a3cd36a-2d23-4ee2-8f0c-298c7a14747a+ActivityOutputType">
+            xmlns:ns1="http://xmlns.tibco.com/bw/security/tokens" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/httpreceiver+a6e35c1e-1657-48b0-887f-c2bf612a92e3+ActivityOutputType">
             <!-- xmlns:ns1="http://xmlns.tibco.com/bw/plugin-api/messages/context" -->
             <import namespace="http://xmlns.tibco.com/encodings/mime"/>
             <import namespace="http://xmlns.tibco.com/bw/security/tokens"/>
@@ -325,24 +330,22 @@
             <complexType name="parametersType">
                 <sequence>
                     <element form="unqualified" maxOccurs="1"
-                        minOccurs="0" name="ConnectionNumber" type="string"/>
-                    <element form="unqualified" maxOccurs="1"
                         minOccurs="0" name="CustomerName" type="string"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="0" name="UniqueID" type="string"/>
                     <element form="unqualified" maxOccurs="1"
                         minOccurs="0" name="ConnectionType" type="string"/>
                 </sequence>
             </complexType>
         </schema>
         <schema
-            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f51b02f9-6bc4-4160-8b2d-762d459e61a5+input"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f51b02f9-6bc4-4160-8b2d-762d459e61a5+input">
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6df577e5-9c3b-46fc-a758-67d1a8f90d10+input"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6df577e5-9c3b-46fc-a758-67d1a8f90d10+input">
             <element name="jdbcQueryActivityInput">
                 <complexType>
                     <sequence>
                         <element maxOccurs="1" minOccurs="1"
-                            name="ConnectionType" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="ConnectionNumber" nillable="true" type="int"/>
+                            name="UniqueID" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -354,16 +357,16 @@
             </element>
         </schema>
         <schema
-            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f51b02f9-6bc4-4160-8b2d-762d459e61a5+output"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f51b02f9-6bc4-4160-8b2d-762d459e61a5+output">
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6df577e5-9c3b-46fc-a758-67d1a8f90d10+output"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6df577e5-9c3b-46fc-a758-67d1a8f90d10+output">
             <element name="resultSet">
                 <complexType>
                     <sequence>
                         <element maxOccurs="unbounded" minOccurs="0" name="Record">
                             <complexType>
                                 <sequence>
-                                    <element maxOccurs="1" minOccurs="0"
-                                    name="COUNT" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="1"
+                                    name="CUSTOMERID" type="string"/>
                                 </sequence>
                             </complexType>
                         </element>
@@ -449,149 +452,48 @@
                 </complexContent>
             </complexType>
         </schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"
-            xmlns:Q2="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery">
-            <import namespace="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
-            <complexType name="ActivityErrorDataType">
-                <choice>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:JDBCConnectionNotFoundException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvalidTimeZoneException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:JDBCSQLException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:LoginTimedOutException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvalidSQLTypeException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:DuplicatedFieldNameException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q2:ActivityTimedOutException"/>
-                </choice>
-            </complexType>
-        </schema>
         <schema
-            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+76d7b67f-3d32-41b5-a880-825e9fa01b37+input"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+76d7b67f-3d32-41b5-a880-825e9fa01b37+input">
-            <element name="jdbcUpdateActivityInput">
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f2bc1be0-03c6-4584-9cce-e5fcf6d543f9+input"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f2bc1be0-03c6-4584-9cce-e5fcf6d543f9+input">
+            <element name="jdbcQueryActivityInput">
                 <complexType>
                     <sequence>
                         <element maxOccurs="1" minOccurs="1"
-                            name="ConnectionNumber" nillable="true" type="int"/>
+                            name="CustomerID" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="1"
                             name="ConnectionType" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="timeout" type="long"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="maxRows" type="long"/>
                     </sequence>
                 </complexType>
             </element>
         </schema>
-        <xs:schema attributeFormDefault="unqualified"
-            elementFormDefault="qualified"
-            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc"
-            xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-            <xs:complexType name="jdbcCallActivityInput">
-                <xs:sequence>
-                    <xs:element maxOccurs="1" minOccurs="0"
-                        name="inputSet" type="xs:anyType"/>
-                    <xs:element maxOccurs="1" minOccurs="0"
-                        name="ServerTimeZone" type="xs:string"/>
-                    <xs:element maxOccurs="1" minOccurs="0"
-                        name="timeout" type="xs:int"/>
-                    <xs:element maxOccurs="1" minOccurs="0"
-                        name="maxRows" type="xs:int"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:element name="jdbcCallActivityInput" type="tns:jdbcCallActivityInput"/>
-            <xs:element name="jdbcCallActivityOutput" type="tns:jdbcCallActivityOutput"/>
-            <xs:complexType name="jdbcCallActivityOutput">
-                <xs:sequence>
-                    <xs:element maxOccurs="1" minOccurs="0"
-                        name="outputSet" type="xs:string"/>
-                    <xs:element maxOccurs="1" minOccurs="0"
-                        name="UnResolvedResultSets" type="xs:string"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="column">
-                <xs:sequence>
-                    <xs:element form="unqualified" name="name" type="xs:string"/>
-                    <xs:element form="unqualified" name="value"
-                        nillable="true" type="xs:anyType"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="jdbcGeneralActivityInput">
-                <xs:sequence>
-                    <xs:element form="unqualified" name="statement" type="xs:string"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="ServerTimeZone" type="xs:string"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="timeout" type="xs:int"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="maxRows" type="xs:int"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="jdbcGeneralActivityOutput">
-                <xs:sequence>
-                    <xs:element form="unqualified" maxOccurs="unbounded"
-                        minOccurs="0" name="noOfUpdates" type="xs:int"/>
-                    <xs:element form="unqualified" maxOccurs="unbounded"
-                        minOccurs="0" name="unknownResultset" type="tns:unknownResultset"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="row">
-                <xs:sequence>
-                    <xs:element form="unqualified" maxOccurs="unbounded"
-                        minOccurs="0" name="column" type="tns:column"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="unknownResultset">
-                <xs:sequence>
-                    <xs:element form="unqualified" maxOccurs="unbounded"
-                        minOccurs="0" name="row" type="tns:row"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:element name="jdbcGeneralActivityInput" type="tns:jdbcGeneralActivityInput"/>
-            <xs:element name="jdbcGeneralActivityOutput" type="tns:jdbcGeneralActivityOutput"/>
-            <xs:complexType name="jdbcUpdateOutput">
-                <xs:sequence>
-                    <xs:element form="unqualified" name="noOfUpdates" type="xs:int"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:element name="jdbcUpdateActivityOutput" type="tns:jdbcUpdateOutput"/>
-        </xs:schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.update"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"
-            xmlns:Q2="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.update">
-            <import namespace="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
-            <complexType name="ActivityErrorDataType">
-                <choice>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:JDBCConnectionNotFoundException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvalidTimeZoneException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:JDBCSQLException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:LoginTimedOutException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvalidSQLTypeException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q2:ActivityTimedOutException"/>
-                </choice>
-            </complexType>
+        <schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f2bc1be0-03c6-4584-9cce-e5fcf6d543f9+output"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f2bc1be0-03c6-4584-9cce-e5fcf6d543f9+output">
+            <element name="resultSet">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="unbounded" minOccurs="0" name="Record">
+                            <complexType>
+                                <sequence>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="COUNT" nillable="false" type="int"/>
+                                </sequence>
+                            </complexType>
+                        </element>
+                    </sequence>
+                </complexType>
+            </element>
         </schema>
         <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+dbe39880-189b-4138-99f3-f1be4c8160d9+ResponseActivityInput"
+            targetNamespace="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+a0815b7d-9f0c-4b57-a01d-ee501f9a3245+ResponseActivityInput"
             xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:ns0="http://xmlns.tibco.com/encodings/mime" xmlns:tns="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+dbe39880-189b-4138-99f3-f1be4c8160d9+ResponseActivityInput">
+            xmlns:ns0="http://xmlns.tibco.com/encodings/mime" xmlns:tns="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+a0815b7d-9f0c-4b57-a01d-ee501f9a3245+ResponseActivityInput">
             <import namespace="http://xmlns.tibco.com/encodings/mime"/>
             <import namespace="http://xmlns.tibco.com/encodings/mime"/>
             <complexType name="headersType">
@@ -708,6 +610,117 @@
             <element name="ActivityTimedOutException" type="tns:BaseExceptionType"/>
             <element name="HystrixCircuitBreakerOpenException" type="tns:HystrixCircuitBreakerOpenExceptionType"/>
         </schema>
+        <schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+ce2bc6ab-7588-47e0-9dff-6e4602b55ac8+input"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+ce2bc6ab-7588-47e0-9dff-6e4602b55ac8+input">
+            <element name="jdbcQueryActivityInput">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="UniqueId" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="ConnectionType" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="ServerTimeZone" type="string"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="timeout" type="long"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="maxRows" type="long"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+        <schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+ce2bc6ab-7588-47e0-9dff-6e4602b55ac8+output"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+ce2bc6ab-7588-47e0-9dff-6e4602b55ac8+output">
+            <element name="resultSet">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="unbounded" minOccurs="0" name="Record">
+                            <complexType>
+                                <sequence>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="COUNT" nillable="false" type="int"/>
+                                </sequence>
+                            </complexType>
+                        </element>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+87c8c05e-deb7-4af4-8480-873af482f4b1+ResponseActivityInput"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:ns0="http://xmlns.tibco.com/encodings/mime" xmlns:tns="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+87c8c05e-deb7-4af4-8480-873af482f4b1+ResponseActivityInput">
+            <import namespace="http://xmlns.tibco.com/encodings/mime"/>
+            <import namespace="http://xmlns.tibco.com/encodings/mime"/>
+            <complexType name="headersType">
+                <sequence>
+                    <element form="unqualified" minOccurs="0"
+                        name="StatusLine" type="string"/>
+                    <element form="unqualified" minOccurs="0"
+                        name="Content-Type" type="string"/>
+                    <element form="unqualified" minOccurs="0"
+                        name="Set-Cookie" type="string"/>
+                    <element form="unqualified" minOccurs="0"
+                        name="Pragma" type="string"/>
+                    <element form="unqualified" minOccurs="0"
+                        name="Location" type="string"/>
+                </sequence>
+            </complexType>
+            <complexType name="dynamicHeadersTypeDetails">
+                <sequence>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="Name" type="string"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="Value" type="string"/>
+                </sequence>
+            </complexType>
+            <complexType name="dynamicHeadersType">
+                <sequence>
+                    <element form="unqualified" maxOccurs="unbounded"
+                        minOccurs="0" name="Header" type="tns:dynamicHeadersTypeDetails"/>
+                </sequence>
+            </complexType>
+            <complexType name="ActivityInputType">
+                <sequence>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="0" name="binaryContent" type="base64Binary"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="0" name="asciiContent" type="string"/>
+                    <element maxOccurs="1" minOccurs="0" name="Headers" type="tns:headersType"/>
+                    <element maxOccurs="1" minOccurs="0"
+                        name="DynamicHeaders" type="tns:dynamicHeadersType"/>
+                    <element minOccurs="0" ref="ns0:mimeEnvelopeElement"/>
+                </sequence>
+            </complexType>
+            <element name="ResponseActivityInput" type="tns:ActivityInputType"/>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"
+            xmlns:Q2="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery">
+            <import namespace="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions"/>
+            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
+            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
+            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
+            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
+            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
+            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:JDBCConnectionNotFoundException"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvalidTimeZoneException"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:JDBCSQLException"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:LoginTimedOutException"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvalidSQLTypeException"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:DuplicatedFieldNameException"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q2:ActivityTimedOutException"/>
+                </choice>
+            </complexType>
+        </schema>
         <schema elementFormDefault="unqualified"
             targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.http.sendHTTPResponse"
             xmlns="http://www.w3.org/2001/XMLSchema"
@@ -720,10 +733,95 @@
                 </choice>
             </complexType>
         </schema>
+        <xsd:schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/renderxml"
+            xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/renderxml" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element name="byteEncoding" type="xsd:string"/>
+            <xsd:element name="cdataSections" type="xsd:string"/>
+            <xsd:element name="renderAsText" type="xsd:boolean"/>
+            <xsd:element name="renderDefaultPrefix" type="xsd:string"/>
+            <xsd:element name="term">
+                <xsd:complexType>
+                    <xsd:attribute name="ref" type="xsd:IDREF"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="textEncoding" type="xsd:string"/>
+            <xsd:element name="validateInput" type="xsd:boolean"/>
+            <xsd:element name="writeXsiTypes" type="xsd:boolean"/>
+            <xsd:element name="xmlBytes" type="xsd:base64Binary"/>
+            <xsd:element name="xmlString" type="xsd:string"/>
+        </xsd:schema>
         <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+72e7f95f-d27d-463d-bc17-3986daa45310+ResponseActivityInput"
+            targetNamespace="http://schemas.tibco.com/bw/plugins/xml/5.0/xmlExceptions"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.tibco.com/bw/plugins/xml/5.0/xmlExceptions">
+            <element name="XMLException" type="tns:XMLExceptionType"/>
+            <complexType name="XMLExceptionType">
+                <sequence>
+                    <element name="msg" type="string"/>
+                    <element minOccurs="0" name="msgCode" type="string"/>
+                </sequence>
+            </complexType>
+            <element name="UnsupportedEncodingException" type="tns:UnsupportedEncodingExceptionType"/>
+            <complexType name="UnsupportedEncodingExceptionType">
+                <complexContent>
+                    <extension base="tns:XMLExceptionType">
+                        <sequence>
+                            <element name="encoding" type="string"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <complexType name="XMLRenderExceptionType">
+                <complexContent>
+                    <extension base="tns:XMLExceptionType"/>
+                </complexContent>
+            </complexType>
+            <element name="XMLRenderException" type="tns:XMLRenderExceptionType"/>
+            <complexType name="XMLParseExceptionType">
+                <complexContent>
+                    <extension base="tns:XMLExceptionType"/>
+                </complexContent>
+            </complexType>
+            <element name="XMLParseException" type="tns:XMLParseExceptionType"/>
+            <complexType name="XMLTransformExceptionType">
+                <complexContent>
+                    <extension base="tns:XMLExceptionType"/>
+                </complexContent>
+            </complexType>
+            <element name="XMLTransformException" type="tns:XMLTransformExceptionType"/>
+            <complexType name="MissingByteCountExceptionType">
+                <complexContent>
+                    <extension base="tns:XMLExceptionType"/>
+                </complexContent>
+            </complexType>
+            <element name="MissingByteCountException" type="tns:MissingByteCountExceptionType"/>
+            <complexType name="ValidationExceptionType">
+                <complexContent>
+                    <extension base="tns:XMLExceptionType"/>
+                </complexContent>
+            </complexType>
+            <element name="ValidationException" type="tns:ValidationExceptionType"/>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.xml.renderxml"
             xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:ns0="http://xmlns.tibco.com/encodings/mime" xmlns:tns="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+72e7f95f-d27d-463d-bc17-3986daa45310+ResponseActivityInput">
+            xmlns:Q1="http://schemas.tibco.com/bw/plugins/xml/5.0/xmlExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.xml.renderxml">
+            <import namespace="http://schemas.tibco.com/bw/plugins/xml/5.0/xmlExceptions"/>
+            <import namespace="http://schemas.tibco.com/bw/plugins/xml/5.0/xmlExceptions"/>
+            <import namespace="http://schemas.tibco.com/bw/plugins/xml/5.0/xmlExceptions"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:XMLRenderException"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:UnsupportedEncodingException"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:MissingByteCountException"/>
+                </choice>
+            </complexType>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+ac37e347-69a1-43b9-8788-e3d6753ecc79+ResponseActivityInput"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:ns0="http://xmlns.tibco.com/encodings/mime" xmlns:tns="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+ac37e347-69a1-43b9-8788-e3d6753ecc79+ResponseActivityInput">
             <import namespace="http://xmlns.tibco.com/encodings/mime"/>
             <import namespace="http://xmlns.tibco.com/encodings/mime"/>
             <complexType name="headersType">
@@ -804,26 +902,33 @@
             </complexType>
             <element name="mimeEnvelopeElement" type="tns:mimeEnvelopeElementType"/>
         </schema>
-        <xs:schema attributeFormDefault="unqualified"
-            elementFormDefault="qualified"
-            targetNamespace="http://www.tibco.com/pe/WriteToLogActivitySchema"
-            xmlns:tns="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-            <xs:complexType name="LogParametersType">
-                <xs:sequence>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="msgCode" type="xs:string"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="loggerName" type="xs:string"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="logLevel" type="xs:string"/>
-                    <xs:element form="unqualified" name="message" type="xs:string"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:element name="ActivityInput" type="tns:LogParametersType"/>
-        </xs:schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+e2e4958b-e9e2-4cb1-84d2-9c05904c8788"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+e2e4958b-e9e2-4cb1-84d2-9c05904c8788">
+            <import namespace="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:ActivityTimedOutException"/>
+                </choice>
+            </complexType>
+        </schema>
+        <wsdl:definitions
+            targetNamespace="http://xmlns.example.com/20240927151721PLT"
+            xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+            xmlns:ptyp="http://www.tibco.com/AddConnectinonSoap/"
+            xmlns:tns="http://xmlns.example.com/20240927151721PLT"
+            xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop"
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <plnk:partnerLinkType name="partnerLinkType">
+                <plnk:role name="use" portType="ptyp:AddConnection"/>
+            </plnk:partnerLinkType>
+            <wsdl:import namespace="http://www.tibco.com/AddConnectinonSoap/"/>
+        </wsdl:definitions>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="gp223"
-        createdOn="Tue Sep 24 10:35:54 IST 2024" description=""
+        createdOn="Fri Sep 27 15:17:21 IST 2024" description=""
         extraErrorVars="true" modifiers="public"
         productVersion="2.6.1 V57 2021-02-13" scalable="true"
         singleton="true" stateless="true" type="IT"/>
@@ -886,8 +991,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
-                                    <layoutConstraint x="-37"
-                                    xsi:type="notation:Bounds" y="50"/>
+                                    <layoutConstraint x="519"
+                                    xsi:type="notation:Bounds" y="80"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -921,8 +1026,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="143"
-                                    xsi:type="notation:Bounds" y="37"/>
+                                    <layoutConstraint x="-13"
+                                    xsi:type="notation:Bounds" y="91"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -956,8 +1061,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="333"
-                                    xsi:type="notation:Bounds" y="37"/>
+                                    <layoutConstraint x="111"
+                                    xsi:type="notation:Bounds" y="77"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -991,8 +1096,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
-                                    <layoutConstraint x="585"
-                                    xsi:type="notation:Bounds" y="51"/>
+                                    <layoutConstraint x="215"
+                                    xsi:type="notation:Bounds" y="80"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -1026,8 +1131,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
-                                    <layoutConstraint x="286"
-                                    xsi:type="notation:Bounds" y="-34"/>
+                                    <layoutConstraint x="222" xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -1061,8 +1165,113 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
-                                    <layoutConstraint x="1"
-                                    xsi:type="notation:Bounds" y="203"/>
+                                    <layoutConstraint x="361"
+                                    xsi:type="notation:Bounds" y="80"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.6"/>
+                                    <layoutConstraint x="376"
+                                    xsi:type="notation:Bounds" y="1"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
+                                    <layoutConstraint x="667"
+                                    xsi:type="notation:Bounds" y="80"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
+                                    <layoutConstraint x="814"
+                                    xsi:type="notation:Bounds" y="65"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1077,7 +1286,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
                                     <layoutConstraint height="384"
-                                    width="1122" xsi:type="notation:Bounds"/>
+                                    width="1250" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -1086,99 +1295,8 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="372" width="1125" xsi:type="notation:Bounds"/>
-                        </children>
-                        <children type="4022">
-                            <children type="3022">
-                                <children type="4028">
-                                    <children type="3029">
-                                    <children type="4032">
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@faultHandlers/@catch.0"/>
-                                    <layoutConstraint
-                                    height="34" width="34"
-                                    xsi:type="notation:Bounds" y="68"/>
-                                    </children>
-                                    <styles xsi:type="notation:SortingStyle"/>
-                                    <styles xsi:type="notation:FilteringStyle"/>
-                                    </children>
-                                    <children type="3030">
-                                    <children type="4005">
-                                    <children type="3007">
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@faultHandlers/@catch.0/@activity/@activity/@activities.0"/>
-                                    <layoutConstraint
-                                    x="103"
-                                    xsi:type="notation:Bounds" y="80"/>
-                                    </children>
-                                    <styles xsi:type="notation:DrawerStyle"/>
-                                    <styles xsi:type="notation:SortingStyle"/>
-                                    <styles xsi:type="notation:FilteringStyle"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <styles xsi:type="bwnotation:ResizingStyle"/>
-                                    <element href="//0/@process/@activity/@faultHandlers/@catch.0/@activity/@activity"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles xsi:type="notation:SortingStyle"/>
-                                    <styles xsi:type="notation:FilteringStyle"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles xsi:type="bwnotation:BackgroundStyle"/>
-                                    <styles xsi:type="bwnotation:ResizingStyle"/>
-                                    <element href="//0/@process/@activity/@faultHandlers/@catch.0"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                </children>
-                                <styles xsi:type="notation:SortingStyle"/>
-                                <styles xsi:type="notation:FilteringStyle"/>
-                            </children>
-                            <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
-                            <styles xsi:type="bwnotation:BackgroundStyle"/>
-                            <styles xsi:type="bwnotation:ResizingStyle"/>
-                            <element href="//0/@process/@activity/@faultHandlers"/>
-                            <layoutConstraint height="200" width="424" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="365" width="444"
+                                x="30" xsi:type="notation:Bounds" y="20"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1188,8 +1306,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="608" width="1125" x="1"
-                        xsi:type="notation:Bounds" y="1"/>
+                    <layoutConstraint height="409" width="519" xsi:type="notation:Bounds"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
@@ -1197,35 +1314,35 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="660" width="1467" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="460" width="1595" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
+            <styles lineColor="65280" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="65280" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.0"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="65408" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="65408" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1235,8 +1352,8 @@
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1246,8 +1363,8 @@
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1256,45 +1373,76 @@
             <element href="//0/@process/@activity/@activity/@links/@children.4"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.5"/>
+            <bendpoints points="[25, 0, -133, 0]$[134, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.7"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
-            namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f51b02f9-6bc4-4160-8b2d-762d459e61a5+input" prefix="tns"/>
+            namespace="http://www.tibco.com/AddConnectinonSoap/" prefix="tns"/>
         <tibex:namespaceItem
-            namespace="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
+            namespace="http://www.example.org/ActivationInputRest" prefix="tns1"/>
         <tibex:namespaceItem
-            namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
-        <tibex:namespaceItem
-            namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+76d7b67f-3d32-41b5-a880-825e9fa01b37+input" prefix="tns1"/>
-        <tibex:namespaceItem
-            namespace="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+dbe39880-189b-4138-99f3-f1be4c8160d9+ResponseActivityInput" prefix="tns2"/>
-        <tibex:namespaceItem
-            namespace="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+72e7f95f-d27d-463d-bc17-3986daa45310+ResponseActivityInput" prefix="tns3"/>
-        <tibex:namespaceItem
-            namespace="http://www.example.org/ServerException" prefix="tns4"/>
-        <tibex:namespaceItem
-            namespace="http://www.tibco.com/pe/WriteToLogActivitySchema" prefix="tns5"/>
+            namespace="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+ac37e347-69a1-43b9-8788-e3d6753ecc79+ResponseActivityInput" prefix="tns2"/>
     </tibex:NamespaceRegistry>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/ServerException"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/Connection"/>
+    <bpws:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="../../Service%20Descriptors/AddConnectinonSoap.wsdl" namespace="http://www.tibco.com/AddConnectinonSoap/"/>
+    <bpws:partnerLinks>
+        <bpws:partnerLink name="ActivationSoap"
+            partnerLinkType="ns0:partnerLinkType" partnerRole="use"
+            sca-bpel:ignore="true" sca-bpel:reference="ActivationSoap" sca-bpel:wiredByImpl="false">
+            <tibex:ReferenceWire dynamic="false" inline="false"
+                processConfigurationName=""
+                processName="telconetwork.ActivationSoap" serviceName="AddConnection"/>
+        </bpws:partnerLink>
+    </bpws:partnerLinks>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:ProcessStarterOutput"
-            name="HTTPReceiver" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns1:NewOperationRequest"
+            name="NewOperation-input" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns1:NewOperationResponse"
+            name="NewOperation" sca-bpel:internal="true"/>
+        <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
         <bpws:variable name="httpConnectorResource"
             sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
             sca-bpel:property="yes"
             sca-bpel:sharedResourceType="{http://xsd.tns.tibco.com/bw/models/sharedresource/httpconnector}HttpConnectorConfiguration" type="xsd:string">
             <bpws:from>
-                <bpws:literal>telconetwork.DeactivationHTTP</bpws:literal>
+                <bpws:literal>telconetwork.SoapHTTPREceiver</bpws:literal>
             </bpws:from>
         </bpws:variable>
-        <bpws:variable element="ns1:jdbcQueryActivityInput"
-            name="JDBCQuery-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns2:resultSet" name="JDBCQuery" sca-bpel:internal="true"/>
-        <bpws:variable element="ns3:ActivityErrorData"
-            name="_error_JDBCQuery" sca-bpel:internal="true"/>
-        <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
         <bpws:variable name="jdbcProperty" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             sca-bpel:sharedResourceType="{http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc}JdbcDataSource" type="xsd:string">
@@ -1302,22 +1450,41 @@
                 <bpws:literal>telconetwork.TelcoDbConnection</bpws:literal>
             </bpws:from>
         </bpws:variable>
-        <bpws:variable element="ns4:jdbcUpdateActivityInput"
-            name="JDBCUpdate-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:jdbcUpdateActivityOutput"
-            name="JDBCUpdate" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:ProcessStarterOutput"
+            name="HTTPReceiver" sca-bpel:internal="true"/>
+        <bpws:variable element="ns4:jdbcQueryActivityInput"
+            name="CustomerIDCheck-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:resultSet" name="CustomerIDCheck" sca-bpel:internal="true"/>
         <bpws:variable element="ns6:ActivityErrorData"
-            name="_error_JDBCUpdate" sca-bpel:internal="true"/>
-        <bpws:variable element="ns7:ResponseActivityInput"
-            name="SendHTTPResponse-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns8:ActivityErrorData"
-            name="_error_SendHTTPResponse" sca-bpel:internal="true"/>
+            name="_error_CustomerIDCheck" sca-bpel:internal="true"/>
+        <bpws:variable element="ns7:jdbcQueryActivityInput"
+            name="ConnectyionCheck-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:resultSet" name="ConnectyionCheck" sca-bpel:internal="true"/>
+        <bpws:variable element="ns6:ActivityErrorData"
+            name="_error_ConnectyionCheck" sca-bpel:internal="true"/>
         <bpws:variable element="ns9:ResponseActivityInput"
             name="SendHTTPResponse1-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns8:ActivityErrorData"
+        <bpws:variable element="ns10:ActivityErrorData"
             name="_error_SendHTTPResponse1" sca-bpel:internal="true"/>
-        <bpws:variable element="ns11:ServerException" name="Throw-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns12:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns11:jdbcQueryActivityInput"
+            name="JDBCQuery1-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns12:resultSet" name="JDBCQuery1" sca-bpel:internal="true"/>
+        <bpws:variable element="ns6:ActivityErrorData"
+            name="_error_JDBCQuery1" sca-bpel:internal="true"/>
+        <bpws:variable element="ns13:ResponseActivityInput"
+            name="SendHTTPResponse-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns10:ActivityErrorData"
+            name="_error_SendHTTPResponse" sca-bpel:internal="true"/>
+        <bpws:variable element="ns14:Connection" name="RenderXml-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns15:xmlString" name="RenderXml" sca-bpel:internal="true"/>
+        <bpws:variable element="ns16:ActivityErrorData"
+            name="_error_RenderXml" sca-bpel:internal="true"/>
+        <bpws:variable element="ns17:ResponseActivityInput"
+            name="SendHTTPResponse2-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns10:ActivityErrorData"
+            name="_error_SendHTTPResponse2" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:ActivityErrorData"
+            name="_error_NewOperation" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1328,73 +1495,56 @@
         <bpws:extension mustUnderstand="no" namespace="http://www.tibco.com/bpel/2007/extensions"/>
     </bpws:extensions>
     <bpws:scope name="scope">
-        <bpws:faultHandlers>
-            <bpws:catch faultElement="ns11:ServerException"
-                faultName="ns11:ServerException"
-                faultVariable="ServerException" tibex:xpdlId="6dcb6a8f-b78c-41f2-85f0-164b6cb427ab">
-                <bpws:scope name="scope1">
-                    <bpws:flow name="flow1">
-                        <bpws:links/>
-                        <bpws:extensionActivity>
-                            <tibex:activityExtension
-                                inputVariable="Log-input" name="Log"
-                                tibex:xpdlId="1f5a275f-04de-4e25-b36c-7f2ecb6df6e4" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                <tibex:inputBindings>
-                                    <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns4=&quot;http://www.example.org/ServerException&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ServerException&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns5:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;$ServerException/tns4:Message&quot;/>&lt;/message>&lt;/tns5:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                </tibex:inputBindings>
-                                <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.generalactivities.log"
-                                    version="6.0.0.001"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value role="Info"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                </tibex:config>
-                            </tibex:activityExtension>
-                        </bpws:extensionActivity>
-                    </bpws:flow>
-                </bpws:scope>
-            </bpws:catch>
-        </bpws:faultHandlers>
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="HTTPReceiverToJDBCQuery" tibex:linkType="SUCCESS"/>
-                <bpws:link name="JDBCQueryToJDBCUpdate" tibex:linkType="SUCCESSWITHNOCONDITION"/>
-                <bpws:link name="JDBCUpdateToSendHTTPResponse" tibex:linkType="SUCCESS"/>
+                <bpws:link name="HTTPReceiverToCustomerIDCheck" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                <bpws:link name="CustomerIDCheckToJDBCQuery" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                 <bpws:link name="JDBCQueryToSendHTTPResponse1" tibex:linkType="SUCCESSWITHCONDITION"/>
-                <bpws:link name="HTTPReceiverToThrow" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="ConnectyionCheckToJDBCQuery1" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                <bpws:link name="JDBCQuery1ToSendHTTPResponse" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="JDBCQuery1ToNewOperation" tibex:linkType="SUCCESS"/>
+                <bpws:link name="NewOperationToRenderXml" tibex:linkType="SUCCESS"/>
+                <bpws:link name="RenderXmlToSendHTTPResponse2" tibex:linkType="SUCCESS"/>
             </bpws:links>
+            <bpws:invoke inputVariable="NewOperation-input"
+                name="NewOperation" operation="NewOperation"
+                outputVariable="NewOperation"
+                partnerLink="ActivationSoap"
+                portType="ns1:AddConnection" tibex:xpdlId="e2e4958b-e9e2-4cb1-84d2-9c05904c8788">
+                <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://www.tibco.com/AddConnectinonSoap/" xmlns:tns1="http://www.example.org/ActivationInputRest" version="2.0"&gt;&lt;xsl:param name="HTTPReceiver"/&gt;&lt;xsl:template name="NewOperation-input" match="/"&gt;&lt;tns:NewOperationRequest&gt;&lt;parameters&gt;&lt;tns1:Request&gt;&lt;tns1:CustomerName&gt;&lt;xsl:value-of select="$HTTPReceiver/parameters/CustomerName"/&gt;&lt;/tns1:CustomerName&gt;&lt;tns1:UniqueID&gt;&lt;xsl:value-of select="$HTTPReceiver/parameters/UniqueID"/&gt;&lt;/tns1:UniqueID&gt;&lt;tns1:ConnectionType&gt;&lt;xsl:value-of select="$HTTPReceiver/parameters/ConnectionType"/&gt;&lt;/tns1:ConnectionType&gt;&lt;/tns1:Request&gt;&lt;/parameters&gt;&lt;/tns:NewOperationRequest&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+                <tibex:inputBindings>
+                    <tibex:partBinding
+                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/AddConnectinonSoap/&quot; xmlns:tns1=&quot;http://www.example.org/ActivationInputRest&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;HTTPReceiver&quot;/>&#xa;    &lt;xsl:template name=&quot;NewOperation-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:Request>&#xa;            &lt;tns1:CustomerName>&#xa;                &lt;xsl:value-of select=&quot;$HTTPReceiver/parameters/CustomerName&quot;/>&#xa;            &lt;/tns1:CustomerName>&#xa;            &lt;tns1:UniqueID>&#xa;                &lt;xsl:value-of select=&quot;$HTTPReceiver/parameters/UniqueID&quot;/>&#xa;            &lt;/tns1:UniqueID>&#xa;            &lt;tns1:ConnectionType>&#xa;                &lt;xsl:value-of select=&quot;$HTTPReceiver/parameters/ConnectionType&quot;/>&#xa;            &lt;/tns1:ConnectionType>&#xa;        &lt;/tns1:Request>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                </tibex:inputBindings>
+                <bpws:targets>
+                    <bpws:target linkName="JDBCQuery1ToNewOperation"/>
+                </bpws:targets>
+                <bpws:sources>
+                    <bpws:source linkName="NewOperationToRenderXml"/>
+                </bpws:sources>
+            </bpws:invoke>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
                     eventTimeout="60"
                     governedObjectTypes="BWHttpService"
                     name="HTTPReceiver"
-                    tibex:xpdlId="1a3cd36a-2d23-4ee2-8f0c-298c7a14747a"
+                    tibex:xpdlId="a6e35c1e-1657-48b0-887f-c2bf612a92e3"
                     variable="HTTPReceiver" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
-                        <bpws:source linkName="HTTPReceiverToJDBCQuery"/>
-                        <bpws:source linkName="HTTPReceiverToThrow">
+                        <bpws:source linkName="HTTPReceiverToCustomerIDCheck">
                             <tibex:DesignExpression>
                                 <tibex:expression
-                                    expression="$HTTPReceiver/RequestURI=&quot;/favicon.ico&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$HTTPReceiver/RequestURI="/favicon.ico"]]></bpws:transitionCondition>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
                         </bpws:source>
                     </bpws:sources>
                     <tibex:eventSource>
                         <bwext:BWActivity
                             activityTypeID="bw.http.HTTPReceiver"
                             version="6.0.0.20132205"
-                            xmlns:ActivityOutputType="http://www.tibco.com/namespaces/tnt/plugins/httpreceiver+1a3cd36a-2d23-4ee2-8f0c-298c7a14747a+ActivityOutputType"
+                            xmlns:ActivityOutputType="http://www.tibco.com/namespaces/tnt/plugins/httpreceiver+a6e35c1e-1657-48b0-887f-c2bf612a92e3+ActivityOutputType"
                             xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
                             xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
                             xmlns:http="http://ns.tibco.com/bw/palette/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -1408,10 +1558,9 @@
                                     outputStyle="String"
                                     parsePostData="true"
                                     sequencingKey="" xsi:type="http:HTTPReceiver">
-                                    <httpParameters parameterName="ConnectionNumber"/>
                                     <httpParameters parameterName="CustomerName"/>
+                                    <httpParameters parameterName="UniqueID"/>
                                     <httpParameters parameterName="ConnectionType"/>
-                                    <writeToFilePolicy/>
                                     </value>
                                 </properties>
                             </activityConfig>
@@ -1420,31 +1569,26 @@
                 </tibex:receiveEvent>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="JDBCQuery-input"
-                    name="JDBCQuery" outputVariable="JDBCQuery"
-                    tibex:xpdlId="f51b02f9-6bc4-4160-8b2d-762d459e61a5" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                <tibex:activityExtension
+                    inputVariable="CustomerIDCheck-input"
+                    name="CustomerIDCheck"
+                    outputVariable="CustomerIDCheck"
+                    tibex:xpdlId="6df577e5-9c3b-46fc-a758-67d1a8f90d10" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="HTTPReceiverToJDBCQuery"/>
+                        <bpws:target linkName="HTTPReceiverToCustomerIDCheck"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="JDBCQueryToJDBCUpdate">
+                        <bpws:source linkName="CustomerIDCheckToJDBCQuery">
                             <tibex:DesignExpression>
                                 <tibex:expression
                                     expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
                             <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
                         </bpws:source>
-                        <bpws:source linkName="JDBCQueryToSendHTTPResponse1">
-                            <tibex:DesignExpression>
-                                <tibex:expression
-                                    expression="$JDBCQuery/Record/COUNT=0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                            </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$JDBCQuery/Record/COUNT=0]]></bpws:transitionCondition>
-                        </bpws:source>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+f51b02f9-6bc4-4160-8b2d-762d459e61a5+input&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;HTTPReceiver&quot;/>&lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&lt;tns:jdbcQueryActivityInput>&lt;ConnectionType>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($HTTPReceiver/parameters/ConnectionType)&quot;>&lt;xsl:value-of select=&quot;$HTTPReceiver/parameters/ConnectionType&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/ConnectionType>&lt;ConnectionNumber>&lt;xsl:value-of select=&quot;xsd:int($HTTPReceiver/parameters/ConnectionNumber)&quot;/>&lt;/ConnectionNumber>&lt;/tns:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+6df577e5-9c3b-46fc-a758-67d1a8f90d10+input&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;HTTPReceiver&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCQuery1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:jdbcQueryActivityInput>&#xa;            &lt;UniqueID>&#xa;                &lt;xsl:choose>&#xa;                    &lt;xsl:when test=&quot;exists($HTTPReceiver/parameters/UniqueID)&quot;>&#xa;                        &lt;xsl:value-of select=&quot;$HTTPReceiver/parameters/UniqueID&quot;/>&#xa;                    &lt;/xsl:when>&#xa;                    &lt;xsl:otherwise>&#xa;                        &lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&#xa;                    &lt;/xsl:otherwise>&#xa;                &lt;/xsl:choose>&#xa;            &lt;/UniqueID>&#xa;        &lt;/tns3:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1457,13 +1601,69 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
                                     <value maxRows="100"
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="Select count(*) From FA2Connection where ConnectionType=? AND ConnectionNumber=?"
+                                    sqlStatement="SELECT CustomerID&#xa;  FROM FA2Customer where UniqueID=?&#xa;"
                                     timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
                                     <PreparedParameters
                                     DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="UniqueID"/>
+                                    <columnMetadata columnIndex="1"
+                                    columnName="CUSTOMERID"
+                                    dataType="12" typeName="varchar2"/>
+                                    </value>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="ConnectyionCheck-input"
+                    name="ConnectyionCheck"
+                    outputVariable="ConnectyionCheck"
+                    tibex:xpdlId="f2bc1be0-03c6-4584-9cce-e5fcf6d543f9" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="CustomerIDCheckToJDBCQuery"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="JDBCQueryToSendHTTPResponse1">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="$ConnectyionCheck/Record/COUNT >= 1" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$ConnectyionCheck/Record/COUNT >= 1]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="ConnectyionCheckToJDBCQuery1">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                        </bpws:source>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+f2bc1be0-03c6-4584-9cce-e5fcf6d543f9+input&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;HTTPReceiver&quot;/>&#xa;    &lt;xsl:param name=&quot;CustomerIDCheck&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:jdbcQueryActivityInput>&#xa;            &lt;CustomerID>&#xa;                &lt;xsl:choose>&#xa;                    &lt;xsl:when test=&quot;exists($CustomerIDCheck/Record/CUSTOMERID)&quot;>&#xa;                        &lt;xsl:value-of select=&quot;$CustomerIDCheck/Record/CUSTOMERID&quot;/>&#xa;                    &lt;/xsl:when>&#xa;                    &lt;xsl:otherwise>&#xa;                        &lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&#xa;                    &lt;/xsl:otherwise>&#xa;                &lt;/xsl:choose>&#xa;            &lt;/CustomerID>&#xa;            &lt;ConnectionType>&#xa;                &lt;xsl:choose>&#xa;                    &lt;xsl:when test=&quot;exists($HTTPReceiver/parameters/ConnectionType)&quot;>&#xa;                        &lt;xsl:value-of select=&quot;$HTTPReceiver/parameters/ConnectionType&quot;/>&#xa;                    &lt;/xsl:when>&#xa;                    &lt;xsl:otherwise>&#xa;                        &lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&#xa;                    &lt;/xsl:otherwise>&#xa;                &lt;/xsl:choose>&#xa;            &lt;/ConnectionType>&#xa;        &lt;/tns3:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.jdbc.JDBCQuery"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:jdbcPalette="http://ns.tibco.com/bw/palette/jdbc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
+                                    <value maxRows="100"
+                                    sharedResourceProperty="jdbcProperty"
+                                    sqlStatement="SELECT count(*)&#xa;  FROM FA2Connection where CustomerID=? AND ConnectionType=?&#xa;"
+                                    timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="CustomerID"/>
+                                    <PreparedParameters
+                                    DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="ConnectionType"/>
-                                    <PreparedParameters DataType="4"
-                                    DataTypeDisplayValue="INTEGER" ParameterName="ConnectionNumber"/>
                                     <columnMetadata columnIndex="1"
                                     columnName="COUNT(*)"
                                     dataType="4"
@@ -1477,37 +1677,81 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension
-                    inputVariable="JDBCUpdate-input" name="JDBCUpdate"
-                    outputVariable="JDBCUpdate"
-                    tibex:xpdlId="76d7b67f-3d32-41b5-a880-825e9fa01b37" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    inputVariable="SendHTTPResponse1-input"
+                    name="SendHTTPResponse1"
+                    tibex:xpdlId="a0815b7d-9f0c-4b57-a01d-ee501f9a3245" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="JDBCQueryToJDBCUpdate"/>
+                        <bpws:target linkName="JDBCQueryToSendHTTPResponse1"/>
                     </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="JDBCUpdateToSendHTTPResponse"/>
-                    </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+76d7b67f-3d32-41b5-a880-825e9fa01b37+input&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;HTTPReceiver&quot;/>&lt;xsl:template name=&quot;JDBCUpdate-input&quot; match=&quot;/&quot;>&lt;tns1:jdbcUpdateActivityInput>&lt;ConnectionNumber>&lt;xsl:value-of select=&quot;xsd:int($HTTPReceiver/parameters/ConnectionNumber)&quot;/>&lt;/ConnectionNumber>&lt;ConnectionType>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($HTTPReceiver/parameters/ConnectionType)&quot;>&lt;xsl:value-of select=&quot;$HTTPReceiver/parameters/ConnectionType&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/ConnectionType>&lt;/tns1:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+a0815b7d-9f0c-4b57-a01d-ee501f9a3245+ResponseActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;SendHTTPResponse1-input&quot; match=&quot;/&quot;>&lt;tns3:ResponseActivityInput>&lt;asciiContent>&lt;xsl:value-of select=&quot;&amp;quot;Customer Already Existed with Connection Type&amp;quot;&quot;/>&lt;/asciiContent>&lt;/tns3:ResponseActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
-                            activityTypeID="bw.jdbc.update"
+                            activityTypeID="bw.http.sendHTTPResponse"
+                            version="6.0.0.20132205"
+                            xmlns:ResponseActivityInput="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+a0815b7d-9f0c-4b57-a01d-ee501f9a3245+ResponseActivityInput"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:http="http://ns.tibco.com/bw/palette/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/http#//SendHTTPResponse"/>
+                                    <value closeConnection="true"
+                                    inputHeadersQName="ResponseActivityInput:headersType"
+                                    replyFor="HTTPReceiver" xsi:type="http:SendHTTPResponse"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="JDBCQuery1-input" name="JDBCQuery1"
+                    outputVariable="JDBCQuery1"
+                    tibex:xpdlId="ce2bc6ab-7588-47e0-9dff-6e4602b55ac8" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="ConnectyionCheckToJDBCQuery1"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="JDBCQuery1ToSendHTTPResponse">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="$JDBCQuery1/Record/COUNT >=1" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$JDBCQuery1/Record/COUNT >=1]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="JDBCQuery1ToNewOperation"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns12=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+ce2bc6ab-7588-47e0-9dff-6e4602b55ac8+input&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;HTTPReceiver&quot;/>&lt;xsl:template name=&quot;JDBCQuery1-input&quot; match=&quot;/&quot;>&lt;tns12:jdbcQueryActivityInput>&lt;UniqueId>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($HTTPReceiver/parameters/UniqueID)&quot;>&lt;xsl:value-of select=&quot;$HTTPReceiver/parameters/UniqueID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/UniqueId>&lt;ConnectionType>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($HTTPReceiver/parameters/ConnectionType)&quot;>&lt;xsl:value-of select=&quot;$HTTPReceiver/parameters/ConnectionType&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/ConnectionType>&lt;/tns12:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.jdbc.JDBCQuery"
                             xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
                             xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
                             xmlns:jdbcPalette="http://ns.tibco.com/bw/palette/jdbc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCUpdateActivity"/>
-                                    <value
+                                    <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
+                                    <value maxRows="100"
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="Delete From FA2Connection where ConnectionNumber=? AND ConnectionType=?"
-                                    timeout="10" xsi:type="jdbcPalette:JDBCUpdateActivity">
-                                    <PreparedParameters DataType="4"
-                                    DataTypeDisplayValue="INTEGER" ParameterName="ConnectionNumber"/>
+                                    sqlStatement="SELECT count(*) from FA2Customer Inner Join FA2Connection On FA2Customer.CustomerId=FA2Connection.CustomerID where UniqueId=? AND ConnectionType=?"
+                                    timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="UniqueId"/>
                                     <PreparedParameters
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="ConnectionType"/>
+                                    <columnMetadata columnIndex="1"
+                                    columnName="COUNT(*)"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="number"/>
                                     </value>
                                 </properties>
                             </activityConfig>
@@ -1519,19 +1763,19 @@
                 <tibex:activityExtension
                     inputVariable="SendHTTPResponse-input"
                     name="SendHTTPResponse"
-                    tibex:xpdlId="dbe39880-189b-4138-99f3-f1be4c8160d9" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    tibex:xpdlId="87c8c05e-deb7-4af4-8480-873af482f4b1" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="JDBCUpdateToSendHTTPResponse"/>
+                        <bpws:target linkName="JDBCQuery1ToSendHTTPResponse"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+dbe39880-189b-4138-99f3-f1be4c8160d9+ResponseActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;SendHTTPResponse-input&quot; match=&quot;/&quot;>&lt;tns2:ResponseActivityInput>&lt;asciiContent>&lt;xsl:value-of select=&quot;&amp;quot;connection deleated&amp;quot;&quot;/>&lt;/asciiContent>&lt;/tns2:ResponseActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns13=&quot;http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+87c8c05e-deb7-4af4-8480-873af482f4b1+ResponseActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;SendHTTPResponse-input&quot; match=&quot;/&quot;>&lt;tns13:ResponseActivityInput>&lt;asciiContent>&lt;xsl:value-of select=&quot;&amp;quot;cant create&amp;quot;&quot;/>&lt;/asciiContent>&lt;/tns13:ResponseActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
                             activityTypeID="bw.http.sendHTTPResponse"
                             version="6.0.0.20132205"
-                            xmlns:ResponseActivityInput="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+dbe39880-189b-4138-99f3-f1be4c8160d9+ResponseActivityInput"
+                            xmlns:ResponseActivityInput="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+87c8c05e-deb7-4af4-8480-873af482f4b1+ResponseActivityInput"
                             xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
                             xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
                             xmlns:http="http://ns.tibco.com/bw/palette/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -1549,21 +1793,58 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension
-                    inputVariable="SendHTTPResponse1-input"
-                    name="SendHTTPResponse1"
-                    tibex:xpdlId="72e7f95f-d27d-463d-bc17-3986daa45310" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.example.org/Connection&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;NewOperation&quot;/>&#xa;    &lt;xsl:template name=&quot;RenderXml-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:Connection>&#xa;            &lt;xsl:for-each select=&quot;$NewOperation/parameters/tns3:Connection/tns3:ConnectionDetails&quot;>&#xa;                &lt;tns3:ConnectionDetails>&#xa;                    &lt;tns3:CustomerID>&#xa;                        &lt;xsl:value-of select=&quot;tns3:CustomerID&quot;/>&#xa;                    &lt;/tns3:CustomerID>&#xa;                    &lt;tns3:CustomerName>&#xa;                        &lt;xsl:value-of select=&quot;tns3:CustomerName&quot;/>&#xa;                    &lt;/tns3:CustomerName>&#xa;                    &lt;tns3:UniqueID>&#xa;                        &lt;xsl:value-of select=&quot;tns3:UniqueID&quot;/>&#xa;                    &lt;/tns3:UniqueID>&#xa;                    &lt;tns3:ConnectionNumber>&#xa;                        &lt;xsl:value-of select=&quot;tns3:ConnectionNumber&quot;/>&#xa;                    &lt;/tns3:ConnectionNumber>&#xa;                    &lt;tns3:ConnectionType>&#xa;                        &lt;xsl:value-of select=&quot;tns3:ConnectionType&quot;/>&#xa;                    &lt;/tns3:ConnectionType>&#xa;                &lt;/tns3:ConnectionDetails>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns3:Connection>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
+                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
+                    inputVariable="RenderXml-input" name="RenderXml"
+                    outputVariable="RenderXml"
+                    tibex:xpdlId="31936e21-59de-4c39-96a3-cf99ec065c3e" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="JDBCQueryToSendHTTPResponse1"/>
+                        <bpws:target linkName="NewOperationToRenderXml"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="RenderXmlToSendHTTPResponse2"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.example.org/Connection&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;NewOperation.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;RenderXml-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:Connection>&#xa;            &lt;xsl:for-each select=&quot;$NewOperation.parameters/tns3:ConnectionDetails&quot;>&#xa;                &lt;tns3:ConnectionDetails>&#xa;                    &lt;tns3:CustomerID>&#xa;                        &lt;xsl:value-of select=&quot;tns3:CustomerID&quot;/>&#xa;                    &lt;/tns3:CustomerID>&#xa;                    &lt;tns3:CustomerName>&#xa;                        &lt;xsl:value-of select=&quot;tns3:CustomerName&quot;/>&#xa;                    &lt;/tns3:CustomerName>&#xa;                    &lt;tns3:UniqueID>&#xa;                        &lt;xsl:value-of select=&quot;tns3:UniqueID&quot;/>&#xa;                    &lt;/tns3:UniqueID>&#xa;                    &lt;tns3:ConnectionNumber>&#xa;                        &lt;xsl:value-of select=&quot;tns3:ConnectionNumber&quot;/>&#xa;                    &lt;/tns3:ConnectionNumber>&#xa;                    &lt;tns3:ConnectionType>&#xa;                        &lt;xsl:value-of select=&quot;tns3:ConnectionType&quot;/>&#xa;                    &lt;/tns3:ConnectionType>&#xa;                &lt;/tns3:ConnectionDetails>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns3:Connection>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.xml.renderxml"
+                            version="6.0.0.20121128"
+                            xmlns:Connection="http://www.example.org/Connection"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:palettexml="http://ns.tibco.com/bw/palette/xmlpalette" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/xmlpalette#//RenderXml"/>
+                                    <value
+                                    inputElementQName="Connection:Connection"
+                                    outputStyle="text" xsi:type="palettexml:RenderXml"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="SendHTTPResponse2-input"
+                    name="SendHTTPResponse2"
+                    tibex:xpdlId="ac37e347-69a1-43b9-8788-e3d6753ecc79" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="RenderXmlToSendHTTPResponse2"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+72e7f95f-d27d-463d-bc17-3986daa45310+ResponseActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;SendHTTPResponse1-input&quot; match=&quot;/&quot;>&lt;tns3:ResponseActivityInput>&lt;asciiContent>&lt;xsl:value-of select=&quot;&amp;quot;user dont exist with connectino typwe&amp;quot;&quot;/>&lt;/asciiContent>&lt;/tns3:ResponseActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+ac37e347-69a1-43b9-8788-e3d6753ecc79+ResponseActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;RenderXml&quot;/>&lt;xsl:template name=&quot;SendHTTPResponse2-input&quot; match=&quot;/&quot;>&lt;tns2:ResponseActivityInput>&lt;asciiContent>&lt;xsl:value-of select=&quot;$RenderXml&quot;/>&lt;/asciiContent>&lt;Headers>&lt;Content-Type>&lt;xsl:value-of select=&quot;&amp;quot;application/xml&amp;quot;&quot;/>&lt;/Content-Type>&lt;/Headers>&lt;/tns2:ResponseActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
                             activityTypeID="bw.http.sendHTTPResponse"
                             version="6.0.0.20132205"
-                            xmlns:ResponseActivityInput="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+72e7f95f-d27d-463d-bc17-3986daa45310+ResponseActivityInput"
+                            xmlns:ResponseActivityInput="http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+ac37e347-69a1-43b9-8788-e3d6753ecc79+ResponseActivityInput"
                             xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
                             xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
                             xmlns:http="http://ns.tibco.com/bw/palette/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -1579,16 +1860,6 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:throw faultName="ns11:ServerException"
-                faultVariable="Throw-input" name="Throw" tibex:xpdlId="eeb516af-b528-4d8e-8c37-43e8c5430b51">
-                <tibex:inputBindings>
-                    <tibex:partBinding
-                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.org/ServerException&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;Throw-input&quot; match=&quot;/&quot;>&lt;tns4:ServerException>&lt;tns4:Message>&lt;xsl:value-of select=&quot;&amp;quot;This is a favicon error&amp;quot;&quot;/>&lt;/tns4:Message>&lt;/tns4:ServerException>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                </tibex:inputBindings>
-                <bpws:targets>
-                    <bpws:target linkName="HTTPReceiverToThrow"/>
-                </bpws:targets>
-            </bpws:throw>
         </bpws:flow>
     </bpws:scope>
 </bpws:process>

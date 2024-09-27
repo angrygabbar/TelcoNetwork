@@ -1,4 +1,17 @@
 {
-    "records": [],
-    "resources": []
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/telconetwork.RestImpl-telco.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/telconetwork.impl-telconetwork.json",
+            "type": "generated"
+        }
+    ]
 }

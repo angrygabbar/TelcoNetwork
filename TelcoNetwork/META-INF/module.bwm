@@ -1,5 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_mibD0HoNEe-gZoLVGrKDtg" targetNamespace="http://tns.tibco.com/bw/composite/TelcoNetwork" name="TelcoNetwork" compositeext:version="1.0.0" compositeext:formatVersion="2">
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActivationInputRest="http://www.example.org/ActivationInputRest" xmlns:AddConnectinonSoap="http://www.tibco.com/AddConnectinonSoap/" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:Connection="http://www.example.org/Connection" xmlns:DeactivationSoap="http://www.tibco.com/DeactivationSoap/" xmlns:RestDeactivation="http://www.example.org/RestDeactivation" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:schema_1727428437895="http://www.example.org/schema/1727428437895" xmlns:wsdl_1727428437708="http://www.example.org/wsdl/1727428437708" xmi:id="_mibD0HoNEe-gZoLVGrKDtg" targetNamespace="http://tns.tibco.com/bw/composite/TelcoNetwork" name="TelcoNetwork" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_Tk5zQHxlEe-0rqkx-yM7XQ" name="telconetwork" promote="Componentimpl/telconetwork">
+    <sca:interface.wsdl xmi:id="_Tk5zRHxlEe-0rqkx-yM7XQ" interface="http://xmlns.example.com/20240927054244PLT#wsdl.interface(telconetwork)" scaext:wsdlLocation="../Processes/telconetwork/impl.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_Tk5zRXxlEe-0rqkx-yM7XQ" name="RestService" path="/telconetwork" docBasePath="http://localhost:7777/TelcoNetwork" docResourcePath="telconetwork" basePath="/" connector="telconetwork.restnewhttp" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/telconetwork.impl-telconetwork.json">
+      <operation xmi:id="_Tk6aUHxlEe-0rqkx-yM7XQ" operationName="post" nickname="post-telconetwork" httpMethod="POST" notes="postTelconetwork" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_QIgWIHxrEe-0rqkx-yM7XQ" operationName="delete" nickname="delete-telconetwork" httpMethod="DELETE" notes="deleteTelconetwork" responseStyle="element">
+        <parameters xmi:id="_nbvMEHxrEe-0rqkx-yM7XQ">
+          <parameterMapping xmi:id="_nbvMEXxrEe-0rqkx-yM7XQ" parameterName="ConnectionNumber" parameterType="Query" dataType="string" required="true"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <advancedConfig xmi:id="_Tk5zRnxlEe-0rqkx-yM7XQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_Tk6aUXxlEe-0rqkx-yM7XQ" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_2VMwgHy0Ee-0rqkx-yM7XQ" name="AddConnection" promote="ComponentActivationSoap/AddConnection">
+    <sca:interface.wsdl xmi:id="_2VMwhHy0Ee-0rqkx-yM7XQ" interface="http://www.tibco.com/AddConnectinonSoap/#wsdl.interface(AddConnection)" scaext:wsdlLocation="../Service%20Descriptors/AddConnectinonSoap.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_XWIa0Hy1Ee-0rqkx-yM7XQ" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/e80e078a12a440dd8bc62e45e6d8dc32/SOAPServiceBinding" portTypeQName="AddConnectinonSoap:AddConnection" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/TelcoNetwork/Service%20Descriptors/AddConnectinonSoap.wsdl">
+      <bindingType xmi:id="_XWIa0Xy1Ee-0rqkx-yM7XQ"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_ZyfIgHy1Ee-0rqkx-yM7XQ" endpointURI="/SOAPServiceBinding/addConnection/" httpConnector="telconetwork.SoapHTTPNEw"/>
+      <operationConfiguration xmi:id="_XWIa0ny1Ee-0rqkx-yM7XQ" operationName="NewOperation" action="NewOperation" actionNeeded="true">
+        <bindingType xmi:id="_XWIa03y1Ee-0rqkx-yM7XQ"/>
+        <messageConfiguration xmi:id="_XWIa1Hy1Ee-0rqkx-yM7XQ" messageQName="AddConnectinonSoap:NewOperationRequest" wsdlLocation="platform:/resource/TelcoNetwork/Service%20Descriptors/AddConnectinonSoap.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_XWIa1Xy1Ee-0rqkx-yM7XQ" partName="parameters" partElementName="ActivationInputRest:Request"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_XWIa1ny1Ee-0rqkx-yM7XQ" messageQName="AddConnectinonSoap:NewOperationResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/TelcoNetwork/Service%20Descriptors/AddConnectinonSoap.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_XWIa13y1Ee-0rqkx-yM7XQ" partName="parameters" partElementName="Connection:Connection"/>
+        </messageConfiguration>
+        <context xmi:id="_XWIa2Hy1Ee-0rqkx-yM7XQ">
+          <inputMapping xmi:id="_XWIa2Xy1Ee-0rqkx-yM7XQ"/>
+          <outputMapping xmi:id="_XWIa2ny1Ee-0rqkx-yM7XQ" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_XWIa23y1Ee-0rqkx-yM7XQ" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:service xmi:id="_ryzBYny3Ee-0rqkx-yM7XQ" name="Deactivation" promote="ComponentSoapDeactivation/Deactivation">
+    <sca:interface.wsdl xmi:id="_ryzocHy3Ee-0rqkx-yM7XQ" interface="http://www.tibco.com/DeactivationSoap/#wsdl.interface(Deactivation)" scaext:wsdlLocation="../Service%20Descriptors/DeactivationSoap.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_VDKLQHy4Ee-0rqkx-yM7XQ" name="SOAPServiceBinding1" targetNamespace="http://www.tibco.com/497ba86a288842fdbe38e4f39ef72fb3/SOAPServiceBinding1" portTypeQName="DeactivationSoap:Deactivation" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/TelcoNetwork/Service%20Descriptors/DeactivationSoap.wsdl">
+      <bindingType xmi:id="_VDKLQXy4Ee-0rqkx-yM7XQ"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_knCv4Hy4Ee-0rqkx-yM7XQ" endpointURI="/SOAPServiceBinding1/deactivation/" httpConnector="telconetwork.SOapDesconnectionhttp"/>
+      <operationConfiguration xmi:id="_VDKLQny4Ee-0rqkx-yM7XQ" operationName="NewOperation" action="NewOperation" actionNeeded="true">
+        <bindingType xmi:id="_VDKLQ3y4Ee-0rqkx-yM7XQ"/>
+        <messageConfiguration xmi:id="_VDKLRHy4Ee-0rqkx-yM7XQ" messageQName="DeactivationSoap:NewOperationRequest" wsdlLocation="platform:/resource/TelcoNetwork/Service%20Descriptors/DeactivationSoap.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_VDKLRXy4Ee-0rqkx-yM7XQ" partName="parameters" partElementName="RestDeactivation:Request"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_VDKLRny4Ee-0rqkx-yM7XQ" messageQName="DeactivationSoap:NewOperationResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/TelcoNetwork/Service%20Descriptors/DeactivationSoap.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_VDKLR3y4Ee-0rqkx-yM7XQ" partName="parameters" partTypeName="XMLSchema:string"/>
+        </messageConfiguration>
+        <context xmi:id="_VDKLSHy4Ee-0rqkx-yM7XQ">
+          <inputMapping xmi:id="_VDKLSXy4Ee-0rqkx-yM7XQ"/>
+          <outputMapping xmi:id="_VDKyUHy4Ee-0rqkx-yM7XQ" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_VDKyUXy4Ee-0rqkx-yM7XQ" bindingName="SOAPServiceBinding1"/>
+  </sca:service>
   <sca:property xmi:id="_nnPW0HoNEe-gZoLVGrKDtg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_nnenYHoNEe-gZoLVGrKDtg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_nnkuAHoNEe-gZoLVGrKDtg" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
@@ -13,5 +73,38 @@
   </sca:component>
   <sca:component xmi:id="_rQpGoHoyEe-0rqkx-yM7XQ" name="ComponentDeactivate" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_rQpGoXoyEe-0rqkx-yM7XQ" processName="telconetwork.Deactivate"/>
+  </sca:component>
+  <sca:component xmi:id="_kGsLkHxaEe-0rqkx-yM7XQ" name="ComponentInvokeActivation" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_kGsLkXxaEe-0rqkx-yM7XQ" processName="telconetwork.InvokeActivation"/>
+  </sca:component>
+  <sca:component xmi:id="_ubdqMHxeEe-0rqkx-yM7XQ" name="Component1Process" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ubdqMXxeEe-0rqkx-yM7XQ" processName="telconetwork.Process"/>
+  </sca:component>
+  <sca:component xmi:id="_N_tsYHxlEe-0rqkx-yM7XQ" name="Componentimpl" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_N_tsYXxlEe-0rqkx-yM7XQ" processName="telconetwork.impl"/>
+    <sca:service xmi:id="_Tk5MMHxlEe-0rqkx-yM7XQ" name="telconetwork">
+      <sca:interface.wsdl xmi:id="_Tk5MMXxlEe-0rqkx-yM7XQ" interface="http://xmlns.example.com/20240927054244PLT#wsdl.interface(telconetwork)" scaext:wsdlLocation="../Processes/telconetwork/impl.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_6GPjYHxrEe-0rqkx-yM7XQ" name="Componentimpldeactivation" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_6GPjYXxrEe-0rqkx-yM7XQ" processName="telconetwork.impldeactivation"/>
+  </sca:component>
+  <sca:component xmi:id="_g9RwsHy0Ee-0rqkx-yM7XQ" name="ComponentActivationSoap" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_g9RwsXy0Ee-0rqkx-yM7XQ" processName="telconetwork.ActivationSoap"/>
+    <sca:service xmi:id="_2VMJcHy0Ee-0rqkx-yM7XQ" name="AddConnection">
+      <sca:interface.wsdl xmi:id="_2VMJcXy0Ee-0rqkx-yM7XQ" interface="http://www.tibco.com/AddConnectinonSoap/#wsdl.interface(AddConnection)" scaext:wsdlLocation="../Service%20Descriptors/AddConnectinonSoap.wsdl"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_fhR3UHy1Ee-0rqkx-yM7XQ" name="ComponentSoapInvoke" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_fhR3UXy1Ee-0rqkx-yM7XQ" processName="telconetwork.SoapInvoke"/>
+  </sca:component>
+  <sca:component xmi:id="_b_lnUHy3Ee-0rqkx-yM7XQ" name="ComponentSoapDeactivation" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_b_lnUXy3Ee-0rqkx-yM7XQ" processName="telconetwork.SoapDeactivation"/>
+    <sca:service xmi:id="_ryzBYHy3Ee-0rqkx-yM7XQ" name="Deactivation">
+      <sca:interface.wsdl xmi:id="_ryzBYXy3Ee-0rqkx-yM7XQ" interface="http://www.tibco.com/DeactivationSoap/#wsdl.interface(Deactivation)" scaext:wsdlLocation="../Service%20Descriptors/DeactivationSoap.wsdl"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_nvxbYHy4Ee-0rqkx-yM7XQ" name="ComponentSoapDisconnectionInvoke" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_nvxbYXy4Ee-0rqkx-yM7XQ" processName="telconetwork.SoapDisconnectionInvoke"/>
   </sca:component>
 </sca:composite>

@@ -1,0 +1,22 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/TelcoNetwork/Service Descriptors/telconetwork.RestImpl-telco.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/ActivationInputRest"
+    },
+    {
+        "jsonSchemaLocation": "/TelcoNetwork/Service Descriptors/telconetwork.RestImpl-telco.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/Connection"
+    },
+    {
+        "jsonSchemaLocation": "/TelcoNetwork/Service Descriptors/telconetwork.impl-telconetwork.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/ActivationInputRest"
+    },
+    {
+        "jsonSchemaLocation": "/TelcoNetwork/Service Descriptors/telconetwork.impl-telconetwork.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/Connection"
+    }
+]}

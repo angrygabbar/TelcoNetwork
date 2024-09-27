@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:tns="http://www.tibco.com/AddConnectinonSoap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AddConnectinonSoap" targetNamespace="http://www.tibco.com/AddConnectinonSoap/" xmlns:xsd1="http://www.example.org/ActivationInputRest" xmlns:xsd2="http://www.example.org/Connection">
+    <wsdl:types><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/AddConnectinonSoap/">
+	<xsd:element name="NewOperation">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="NewOperationResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Deactivation">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DeactivationResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element></xsd:schema>
+    	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    		<xsd:import
+    			namespace="http://www.example.org/ActivationInputRest"
+    			schemaLocation="../Schemas/ActivationInputRest.xsd">
+    		</xsd:import>
+    		<xsd:import namespace="http://www.example.org/Connection"
+    			schemaLocation="../Schemas/Connection.xsd">
+    		</xsd:import></xsd:schema></wsdl:types>
+    <wsdl:message name="NewOperationRequest">
+		<wsdl:part name="parameters" element="xsd1:Request"></wsdl:part>
+	</wsdl:message>
+    <wsdl:message name="NewOperationResponse">
+    	<wsdl:part name="parameters" element="xsd2:Connection"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="DeactivationRequest">
+    	<wsdl:part name="parameters" element="tns:Deactivation"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="DeactivationResponse">
+    	<wsdl:part name="parameters" element="tns:DeactivationResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="AddConnection">
+    	<wsdl:operation name="NewOperation">
+    		<wsdl:input message="tns:NewOperationRequest"></wsdl:input>
+    		<wsdl:output message="tns:NewOperationResponse"></wsdl:output>
+    	</wsdl:operation>
+    </wsdl:portType></wsdl:definitions>

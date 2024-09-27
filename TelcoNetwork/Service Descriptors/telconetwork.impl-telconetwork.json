@@ -1,0 +1,112 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "telconetwork",
+    "description" : "telconetwork service"
+  },
+  "host" : "localhost:4006",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/telconetwork" : {
+      "post" : {
+        "summary" : "postTelconetwork",
+        "description" : "postTelconetwork",
+        "operationId" : "post-telconetwork",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Request"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Connection to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Connection"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "deleteTelconetwork",
+        "description" : "deleteTelconetwork",
+        "operationId" : "delete-telconetwork",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "ConnectionNumber",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Request" : {
+      "type" : "object",
+      "required" : [ "UniqueID", "ConnectionType", "CustomerName" ],
+      "properties" : {
+        "CustomerName" : {
+          "type" : "string"
+        },
+        "UniqueID" : {
+          "type" : "string"
+        },
+        "ConnectionType" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Connection" : {
+      "type" : "object",
+      "required" : [ "ConnectionDetails" ],
+      "properties" : {
+        "ConnectionDetails" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConnectionDetails",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "ConnectionDetails" : {
+      "type" : "object",
+      "required" : [ "ConnectionNumber", "UniqueID", "ConnectionType", "CustomerID", "CustomerName" ],
+      "properties" : {
+        "CustomerID" : {
+          "type" : "string"
+        },
+        "CustomerName" : {
+          "type" : "string"
+        },
+        "UniqueID" : {
+          "type" : "string"
+        },
+        "ConnectionNumber" : {
+          "type" : "integer"
+        },
+        "ConnectionType" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
